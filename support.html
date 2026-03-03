@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — QuitScroll</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .support { padding: 140px 24px 80px; max-width: 720px; margin: 0 auto; }
+        .support h1 { font-size: 32px; margin-bottom: 8px; }
+        .support .tagline { font-size: 16px; color: var(--text-secondary); margin-bottom: 48px; line-height: 1.6; }
+        .support h2 { font-size: 20px; margin-top: 40px; margin-bottom: 16px; }
+        .support p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 12px; }
+        .support a { color: var(--orange); }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 20px;
+            transition: border-color .3s;
+        }
+        .contact-card:hover { border-color: rgba(255,107,0,0.3); }
+        .contact-card h3 { font-size: 17px; margin-bottom: 8px; }
+        .contact-card p { margin-bottom: 0; }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .faq-q::after {
+            content: '+';
+            font-family: var(--font-mono);
+            font-size: 20px;
+            color: var(--orange);
+            flex-shrink: 0;
+            transition: transform .3s;
+        }
+        .faq-item.open .faq-q::after { transform: rotate(45deg); }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s ease;
+        }
+        .faq-item.open .faq-a { max-height: 300px; }
+        .faq-a p { padding-top: 12px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <nav class="nav scrolled">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <span class="logo-bar"></span>
+                <span class="logo-text">QUITSCROLL</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="support">
+        <span class="section-tag">SUPPORT</span>
+        <h1>Need help?</h1>
+        <p class="tagline">We're here to help you take back control. Check the FAQ below or reach out directly.</p>
+
+        <!-- CONTACT -->
+        <div class="contact-card">
+            <h3>Email Support</h3>
+            <p>For bugs, feature requests, or account issues, email us at <a href="mailto:rrruco@gmail.com">rrruco@gmail.com</a>. We typically respond within 24 hours.</p>
+        </div>
+
+        <div class="contact-card">
+            <h3>Subscription Issues</h3>
+            <p>Subscriptions are managed through the App Store. To cancel, change, or restore your subscription, go to <strong>Settings &gt; Apple ID &gt; Subscriptions</strong> on your iPhone.</p>
+        </div>
+
+        <!-- FAQ -->
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">How does QuitScroll block apps?</div>
+            <div class="faq-a"><p>QuitScroll uses Apple's official Screen Time API (FamilyControls framework) to apply system-level shields to selected apps. This means apps are blocked at the iOS level — not with a simple overlay that can be dismissed.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Is my data sent to any servers?</div>
+            <div class="faq-a"><p>No. All your data stays on your device. We don't collect analytics, track usage, or store any personal information on external servers. See our <a href="privacy.html">Privacy Policy</a> for full details.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Can I unblock apps in an emergency?</div>
+            <div class="faq-a"><p>Yes. Tap "Protocol Active" on the home screen to start the unlock process. You'll face a shame countdown screen first — this friction is intentional to prevent impulsive unlocking. After the countdown, apps are unblocked for 5 minutes before re-engaging.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What's included in the free plan?</div>
+            <div class="faq-a"><p>Free users can block up to 3 apps, use default shame messages, and track their streak. Premium unlocks unlimited apps, custom shame messages, weekly analytics, focus scheduling, daily limits, and guilt-trip tasks.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How do I cancel my subscription?</div>
+            <div class="faq-a"><p>Open the Settings app on your iPhone, tap your name at the top, then tap Subscriptions. Find QuitScroll (listed as Reset Scroll) and tap Cancel Subscription. You'll keep access until the end of your current billing period.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How do I restore my purchase on a new device?</div>
+            <div class="faq-a"><p>Open QuitScroll, go to Settings, and tap "Restore purchases." Make sure you're signed in with the same Apple ID used for the original purchase.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">The app isn't blocking my apps. What should I do?</div>
+            <div class="faq-a"><p>Make sure you've granted Screen Time permissions when prompted. Go to Settings &gt; Screen Time and ensure it's enabled. If issues persist, try removing and re-selecting your apps in QuitScroll, then tap "Engage Protocol" again.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Does QuitScroll work with parental controls?</div>
+            <div class="faq-a"><p>QuitScroll uses the same Screen Time framework as parental controls. If your device already has parental restrictions, there may be conflicts. QuitScroll is designed for self-directed use by adults.</p></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-bar"></span>
+                <span class="logo-text">QUITSCROLL</span>
+            </div>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="support.html">Support</a>
+            </div>
+            <p class="footer-copy">&copy; 2025 QuitScroll. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
